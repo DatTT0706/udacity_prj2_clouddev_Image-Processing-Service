@@ -48,13 +48,14 @@ import fs from "fs";
       res.sendFile(filteredImage);      
   
       // Clean up: Delete the temporary file: get the temp directory and delete all temp files in this directory
-      const temp_dir = path.dirname(filteredImage);
-      fs.readdir(temp_dir, (err, tempFile) => {
-        if(!err) {
-          const tempFilePath = tempFile.map(file => path.join(temp_dir, file));
-          deleteLocalFiles(tempFilePath);
-        }
-      });
+      // const temp_dir = path.dirname(filteredImage);
+      // fs.readdir(temp_dir, (err, tempFile) => {
+      //   if(!err) {
+      //     const tempFilePath = tempFile.map(file => path.join(temp_dir, file));
+      //     deleteLocalFiles(tempFilePath);
+      //   }
+      // });
+      //deleteLocalFiles(filteredImage);
 
     } catch (error) {
       console.error('Error filtering image:', error);
